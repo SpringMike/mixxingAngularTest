@@ -1,0 +1,47 @@
+<p>ng-if works!</p>
+<button (click)="printAble = !printAble">Toggle Message</button>
+<h2 *ngIf="printAble">{{ messeage }}</h2>
+<p>printAble: {{ printAble }}</p>
+
+<div *ngIf="contacts">
+  <div *ngFor="let i of contacts">
+    <h3>{{ i.name }}</h3>
+    <h2>{{ i.job }}</h2>
+    <div>
+
+      <img *ngIf="i.avatar.url" [src]="i.avatar?.url" alt="Avatar of {{ i.name }}}">
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <button (click)="changeTab(1)" class="btn" [ngClass]="{active: tabIndex == 1}">Tab 1</button>
+  <button (click)="changeTab(2) " class="btn" [ngClass]="{active: tabIndex == 2}">Tab 2</button>
+  <button (click)="changeTab(3)" class="btn" [ngClass]="{active: tabIndex == 3}">Tab 3</button>
+</div>
+<div [ngSwitch]="tabIndex">
+  <ng-template [ngSwitchCase]="1">
+    <div class="panel">
+      Tab - 1
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, repellendus!
+    </div>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="2">
+    <div class="panel">
+      Tab - 2
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolorum, esse illum iste laborum molestias officia
+      officiis quisquam unde vero?
+    </div>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="3">
+    <div class="panel">
+      Tab - 3
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi, architecto consequuntur cum dolor,
+      dolore dolores enim eum ipsa laborum maxime molestiae odio odit placeat quaerat quisquam quo ratione repellat, ut
+      voluptatum? Cum harum placeat quisquam rerum saepe. Molestiae, tempore?
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,92 @@
+$c-1: #353F4F;
+$c-2: #F6DA4A;
+
+.form {
+  background-color: $c-1;
+  color: white;
+  bottom: 0;
+  font: 15px / 18px 'Lato', sans-serif;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.form_content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding: 12px;
+}
+
+.form-field {
+  background-color: lighten($c-1, 5%);
+  border-radius: 3px;
+  padding: 12px;
+  position: relative;
+}
+
+.form-field.__first .form-field_input {
+  appearance: none;
+  display: block;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.form-field.__second .form-field_input {
+  display: none;
+}
+
+.form-field_label {
+  display: block;
+  padding-bottom: 3px;
+  padding-right: 60px;
+  padding-top: 3px;
+  position: relative;
+  &::before,
+  &::after {
+    border: 1px solid white;
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  &::before {
+    border-radius: 30px;
+    height: 27px;
+    right: 0;
+    top: 0;
+    transition: background-color .3s ease-in-out;
+    width: 54px;
+  }
+  &::after {
+    background-color: white;
+    border-radius: 50%;
+    height: 21px;
+    right: 30px;
+    top: 3px;
+    transition: right .3s ease-in-out;
+    width: 21px;
+  }
+}
+
+.form-field_input:checked + .form-field_label {
+  &::before {
+    background-color: $c-2;
+  }
+  &::after {
+    background-color: white;
+    border-radius: 50%;
+    height: 21px;
+    right: 3px;
+    top: 3px;
+    width: 21px;
+  }
+}

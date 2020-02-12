@@ -1,0 +1,21 @@
+h2{
+  color: red;
+}
+img{
+  width: 150px;
+  border-radius: 50%;
+}
+.btn {
+  padding: 10px;
+  background: #ddd;
+  &.active{
+    background: black;
+    color: white;
+  }
+}
+.panel{
+
+      border: 2px solid blue;
+
+
+}
